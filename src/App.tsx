@@ -57,7 +57,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="screen">
+        <div className="screen" id="score">
           {`${currentValue || 0} ${
             currentValue && operation ? operations[operation].symbol : ""
           } ${
@@ -82,8 +82,10 @@ function App() {
               </button>
             ))}
         </div>
+        <button type="reset">C</button>
         <button
           className="btnEqual"
+          id="Equal"
           onClick={() => {
             if ((currentValue && operation && chiffre) || chiffre === 0) {
               const res = operations[operation!].func(currentValue!, chiffre);
